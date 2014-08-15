@@ -7,39 +7,16 @@
 //
 
 import Foundation
-let apples = 3
-let oranges = 5
-let appleSummary = "I have \(apples) apples."
-let fruitSummary = "I have \(apples + oranges) pieces of fruits"
-println(fruitSummary)
-var shoppingList = ["catfish", "water"]
-println(shoppingList[1])
-shoppingList[1] = "bottle of water"
-println(shoppingList[1])
-var occupations = ["Malcolm":"Captain", "Kaylee":"Mechanic"]
-println(occupations["Malcolm"])
-println(occupations["Kaylee"])
-let individualScores = [75, 43, 103, 87, 12]
-var teamScore = 0
-for score in individualScores {
-    if score > 50 {
-        teamScore += 3
-    } else {
-        teamScore += 1
-    }
+let vegetable = "red pepper"
+var vegetableComment = ""
+switch vegetable {
+    case "celery":
+        vegetableComment = "Add some raisins and make ants on a log."
+    case "cucumber", "watercress":
+        vegetableComment = "That would make a good tea sandwich."
+    case let x where x.hasSuffix("pepper"):
+        vegetableComment = "Is it a spicy \(x)?"
+    default:
+        vegetableComment = "Everything tastes good in soup."
 }
-
-println(teamScore)
-var optionalString: String? = nil
-if optionalString == nil {
-    println("Ok")
-} else {
-    println("not OK")
-}
-var greeting = "Hello"
-if let name = optionalString {
-    greeting = "Hello, \(name)"
-} else {
-    greeting = "Bac dep trai"
-}
-println(greeting)
+println(vegetableComment)
